@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://00-00-00.github.io/travel-diary/bhutan/</loc>
+    <lastmod>2018-06-27T11:56:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://00-00-00.github.io/posts/android-arch-part2/</loc>
     <lastmod>2018-06-26T21:22:02+05:30</lastmod>
   </url>
@@ -55,6 +60,12 @@
   <url>
     <loc>https://00-00-00.github.io/categories/tech/</loc>
     <lastmod>2018-06-26T21:22:02+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://00-00-00.github.io/travel-diary/</loc>
+    <lastmod>2018-06-27T11:56:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
