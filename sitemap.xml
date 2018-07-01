@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://00-00-00.github.io/posts/android-arch-part3/</loc>
+    <lastmod>2018-06-28T19:38:24+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://00-00-00.github.io/about/</loc>
     <lastmod>2018-06-27T14:40:41+05:30</lastmod>
   </url>
@@ -24,13 +29,13 @@
   
   <url>
     <loc>https://00-00-00.github.io/</loc>
-    <lastmod>2018-06-27T14:40:41+05:30</lastmod>
+    <lastmod>2018-06-28T19:38:24+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://00-00-00.github.io/tags/android/</loc>
-    <lastmod>2018-06-26T21:22:02+05:30</lastmod>
+    <lastmod>2018-06-28T19:38:24+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -41,25 +46,25 @@
   
   <url>
     <loc>https://00-00-00.github.io/posts/</loc>
-    <lastmod>2018-06-26T21:22:02+05:30</lastmod>
+    <lastmod>2018-06-28T19:38:24+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://00-00-00.github.io/tags/</loc>
-    <lastmod>2018-06-26T21:22:02+05:30</lastmod>
+    <lastmod>2018-06-28T19:38:24+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://00-00-00.github.io/tags/tech/</loc>
-    <lastmod>2018-06-26T21:22:02+05:30</lastmod>
+    <lastmod>2018-06-28T19:38:24+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://00-00-00.github.io/categories/tech/</loc>
-    <lastmod>2018-06-26T21:22:02+05:30</lastmod>
+    <lastmod>2018-06-28T19:38:24+05:30</lastmod>
     <priority>0</priority>
   </url>
   

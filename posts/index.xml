@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 00-00-00</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Jun 2018 21:22:02 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 28 Jun 2018 19:38:24 +0530</lastBuildDate>
     
 	<atom:link href="https://00-00-00.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android Architecture Sandbox #3</title>
+      <link>https://00-00-00.github.io/posts/android-arch-part3/</link>
+      <pubDate>Thu, 28 Jun 2018 19:38:24 +0530</pubDate>
+      
+      <guid>https://00-00-00.github.io/posts/android-arch-part3/</guid>
+      <description>So the task is to set up a Repository that&amp;rsquo;ll interface between the database and the REST APIs. The Repository would have a LocalStore implementation that&amp;rsquo;ll take care of handling the database CRUD, and a CloudStore implementation to take care of the RESTful APIs. We need an implementation of the Repository that&amp;rsquo;ll handle switching between these two interfaces. Since we want an interface and all interactions with the module would be uniform, we need to decide on how the communication would take place.</description>
+    </item>
     
     <item>
       <title>Android Architecture Sandbox #2</title>
