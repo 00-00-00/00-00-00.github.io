@@ -185,7 +185,8 @@ img {
     }
     
 .padded {
-  width: 75%;
+  width: 85%;
+	max-width: 650px;
 }
 
 .navigation {
