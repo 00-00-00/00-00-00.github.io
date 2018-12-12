@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://00-00-00.github.io/travel-diary/ladakh/</loc>
+    <lastmod>2018-12-12T22:01:20+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://00-00-00.github.io/posts/android-arch-part3/</loc>
     <lastmod>2018-06-28T19:38:24+05:30</lastmod>
   </url>
@@ -29,7 +34,7 @@
   
   <url>
     <loc>https://00-00-00.github.io/</loc>
-    <lastmod>2018-06-28T19:38:24+05:30</lastmod>
+    <lastmod>2018-12-12T22:01:20+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -70,7 +75,7 @@
   
   <url>
     <loc>https://00-00-00.github.io/travel-diary/</loc>
-    <lastmod>2018-06-27T11:56:00+05:30</lastmod>
+    <lastmod>2018-12-12T22:01:20+05:30</lastmod>
     <priority>0</priority>
   </url>
   
