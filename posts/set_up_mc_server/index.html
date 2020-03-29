@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Arjun Biju">
+    <meta name="description" content="Arjun&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal,motorcycling">
+
+    <base href="https://00-00-00.github.io/">
+    <title>
+  Your Local Minecraft Server on the Internet · 00-00-00
+</title>
+
+    <link rel="canonical" href="https://00-00-00.github.io/posts/set_up_mc_server/">
+
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://00-00-00.github.io/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://00-00-00.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://00-00-00.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.54.0" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://00-00-00.github.io/">
+      00-00-00
+    </a>
+    
+    <ul class="navigation-list  float-right ">
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="https://00-00-00.github.io/posts/">Blog</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="https://00-00-00.github.io/travel-diary/">Travel-Diary</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="https://00-00-00.github.io/about/">About</a>
+      </li>
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post padded">
+  <article>
+    <header>
+      <h1 class="title">Your Local Minecraft Server on the Internet</h1>
+      <h2 class="date">March 28, 2020</h2>
+
+      
+    </header>
+
+    
+
+<h1 id="your-local-minecraft-server-on-the-internet">Your Local Minecraft Server on the Internet</h1>
+
+<p>I recently got back into minecraft because of a friend. Me being interested mostly in redstone contraptions never got into multiplayer before. Since minecraft is pretty laid back, I thought it would be a great place to hangout with my friend. Whatever may be your reason to play minecraft, when you want to play with another person somewhere else, you start running into a few issues.</p>
+
+<p>I had a free trial month for Realms available to me, so we started our game there. And towards the end of the trial we decided that this is the pace of the game that we like and we don&rsquo;t want to share the world with people that we didn&rsquo;t know. Unfortunately that meant dishing out some excessive recurring payments to keep our access to realms or run a minecraft server on my local machine and expose that over the internet.</p>
+
+<h2 id="ngrok">Ngrok</h2>
+
+<p><a href="https://ngrok.com/">Ngrok</a> is a tool that gives you a secure tunnel to your localhost. I was already familiar with ngrok because it&rsquo;s something I use for my mobile development needs. When I want my mobile application to consume APIs from a local server I use Ngrok.</p>
+
+<p>Setting up and using ngrok is a piece of cake. It doesn&rsquo;t need you to worry about NAT, firewalls , dynamic IP, DHCP. You just need to
+* Go to ngrok&rsquo;s site and create an account to get an access token. Use the free plan if you don&rsquo;t mind the domain name  changing for every session.
+* Download ngrok tool and extract it to a convenient location.
+* Replace with your auth token received above and run this <code>./ngrok authtoken &lt;YOUR_AUTH_TOKEN&gt;</code> to register your client with your account.
+* Run ngrok <code>./ngrok tcp 25565</code>.</p>
+
+<blockquote>
+<p>Assuming that you have gone with a vanilla minecraft server settings, the port by default is <code>25565</code>. You can change it if you want in <code>server.properties</code></p>
+</blockquote>
+
+<p>Voila! You are done. Ask your friend to connect to your server. The link will be on your terminal now where <code>ngrok</code> is running.</p>
+
+<h3 id="cons">Cons</h3>
+
+<p>This set-up is quite prone to latency. Since ngrok client sets up a tunnel with ngrok servers which are in US (at least the servers I got on the free plan) and my friend is connecting from only a couple of  kms away, the latency is twice as higher than necessary. If I can expose they can reach my server directly that should be faster.</p>
+
+<h2 id="no-ip">No-ip</h2>
+
+<p>This set-up has more steps but guaranteed to be faster than the previous solution. Thankfully <a href="https://www.noip.com">Noip</a> has it&rsquo;s own document specific to hosting a minecraft server using it.</p>
+
+<ul>
+<li>Go to noip&rsquo;s website and sign up (I used the free account) and create and register a domain name.</li>
+<li>Download and install no-ip&rsquo;s Dynamic DNS Update Client (DUC).</li>
+<li>Start up the tool and sign in with your noip account</li>
+<li>Wait for the statuses to turn green. Your public IP, that the ISP has given you should show up here. Congrats your IP address has a name now.</li>
+</ul>
+
+<blockquote>
+<p>There are possibilities that your ISP will not let connections reach your router because of their NAT settings or something else. If this is the case, you might need to talk to your ISP (don&rsquo;t know where that&rsquo;ll get you) or change your ISP.</p>
+</blockquote>
+
+<p>Assuming that your PC running your minecraft server is in a wireless network, your public IP is reaching your router and not your server yet. Time to go to the router and fiddle with some settings so that the connections from the internet passes through / forwards to your machine on your wifi/local network. This is port forwarding and is part of Network Address Translation or NAT.</p>
+
+<blockquote>
+<p>This is where it gets troublesome, these settings vary with router manufacturers and models.</p>
+</blockquote>
+
+<ul>
+<li>Go to the router&rsquo;s setting page. You should be able to access it by going to your router&rsquo;s ip (that&rsquo;s the default gateway in your machine&rsquo;s network setting OR interestingly go your <code>noip</code> registered domain).</li>
+<li>Login with your admin credentials.</li>
+<li>Find Port forwarding / Virtual Server setting. These are usually nested somewhere in <strong>Advanced &gt; NAT</strong>.</li>
+</ul>
+
+<blockquote>
+<p>It would be reliable if you enable static ip for the machine that is going to host your server. Otherwise you have to repeat the below steps each time the local IP of your machine changes.</p>
+</blockquote>
+
+<p>In port forwarding/virtual server</p>
+
+<ul>
+<li>Add the WAN port as a port that you want to expose to the world.</li>
+<li>Set the LAN port as <code>25565</code>, given you are running minecraft server on <code>25565</code>.</li>
+<li>Set the LAN IP Address as the local address of your hosting machine. (Some routers might let you specify mac address instead. This would let you not worry about DHCP)</li>
+<li>The protocol can be set to <code>tcp</code> / <code>tcp + udp</code></li>
+<li>Start the minecraft server on your machine.</li>
+</ul>
+
+<blockquote>
+<p>Use the <a href="https://www.portchecktool.com">portchecktool</a> from noip and enter the port as <code>25565</code>(Assuming that is the port that you have chosen to expose as the WAN port). The site should tell you if it can see the service running on that port and is not blocked by ISP/firewall/NAT.</p>
+</blockquote>
+
+<p>You can also use <code>telnet</code> to check if your machine&rsquo;s port is open. Just make sure you are hitting the server from another network. The router is not going to port forward for a network request from within the network. You can connect to your server using your local IP.</p>
+
+<p>If you are having trouble try changing the WAN port and rechecking using telnet or portchecktool. If you found your server, we are all good! Give your friend your server address.
+<code>&lt;registered_domainname&gt;:&lt;wan_port&gt;</code>.</p>
+
+<p><strong>ENJOY PUNCHING TREES</strong></p>
+
+<hr />
+
+<p>I figured out the right router setting for me by running an http server on my local machine first, making sure I can access it from my localhost, setting up noip and the port forwarding and then trying to access the page from my mobile using carrier data instead of wifi. Once I was sure the page was showing up on devices over the internet. I went to simply updating the ports and running the minecraft server instead.</p>
+
+  </article>
+
+  <br/>
+
+  
+  
+</section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+     © 2020  
+     ·  Powered by
+    <a href="https://gohugo.io/">Hugo</a> &
+    <a href="https://github.com/luizdepra/hugo-coder/">Coder</a> ·  Inspired by
+    <a href="https://github.com/salcan/BeyondNothing">BeyondNothing</a>. 
+
+  </section>
+</footer>
+    </main>
+
+    
+
+  </body>
+
+</html>
